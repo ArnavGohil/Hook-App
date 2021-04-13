@@ -4,10 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/bgblack"
     tools:context=".MainActivity">
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/userPhoto"
         android:layout_width="72dp"
         android:layout_height="72dp"
         android:src="@drawable/avatar"
@@ -18,7 +19,7 @@
         app:layout_constraintVertical_bias="0.460" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/userName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
@@ -28,11 +29,11 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+        app:layout_constraintTop_toBottomOf="@+id/userPhoto" />
 
 
     <soup.neumorphism.NeumorphButton
-        android:id="@+id/button"
+        android:id="@+id/login"
         style="@style/Widget.Neumorph.Button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

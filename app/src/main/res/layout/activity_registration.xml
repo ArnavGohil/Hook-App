@@ -21,7 +21,6 @@
             android:textAlignment="center"
             android:layout_height="wrap_content"
             android:text="Registration"
-            android:textColor="#000"
             android:textSize="24sp"
             android:padding="16dp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -790,7 +789,7 @@
                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Address"
+                    android:hint="Dropped Pin Link"
                     android:layout_toEndOf="@id/i11"
                     android:layout_marginLeft="16dp"
                     >
