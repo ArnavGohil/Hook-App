@@ -1,28 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="#164A6572"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".RegistrationActivity"
-    android:orientation="vertical">
+    android:background="@drawable/bgblack"
+    android:orientation="vertical"
+    tools:context=".RegistrationActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".MainActivity"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        tools:context=".MainActivity">
 
         <TextView
             android:id="@+id/tt"
             android:layout_width="match_parent"
-            android:textAlignment="center"
             android:layout_height="wrap_content"
-            android:text="Registration"
-            android:textSize="24sp"
             android:padding="16dp"
+            android:text="Registration"
+            android:textAlignment="center"
+            android:textSize="24sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -30,18 +29,18 @@
         <ImageView
             android:layout_width="81dp"
             android:layout_height="81dp"
-            android:layout_margin="16dp"
             android:layout_gravity="center"
-            android:src="@drawable/photo"/>
+            android:layout_margin="16dp"
+            android:src="@drawable/photo" />
 
 
         <!-- 1. Phone -->
         <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:layout_constraintTop_toBottomOf="@+id/tt"
+            android:layout_margin="8dp"
             app:cardElevation="1dp"
-            android:layout_margin="8dp">
+            app:layout_constraintTop_toBottomOf="@+id/tt">
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -50,9 +49,9 @@
 
                 <ImageView
                     android:id="@+id/i1"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
                     android:layout_centerVertical="true"
-                    android:layout_width="64dp"
-                    android:layout_height="64dp"
                     android:src="@drawable/phone" />
 
                 <com.google.android.material.textfield.TextInputLayout
@@ -60,47 +59,18 @@
                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Phone Number"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="16dp"
                     android:layout_toEndOf="@id/i1"
-                    android:layout_marginLeft="16dp">
+                    android:hint="Phone Number">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:hapticFeedbackEnabled="true" />
+                        android:hapticFeedbackEnabled="true"
+                        android:singleLine="true" />
 
                 </com.google.android.material.textfield.TextInputLayout>
-
-
-                <com.google.android.material.button.MaterialButtonToggleGroup
-                    android:id="@+id/t1"
-                    android:layout_width="match_parent"
-                    android:layout_toEndOf="@id/i1"
-                    android:layout_marginLeft="16dp"
-                    android:layout_below="@id/phone"
-                    android:layout_height="wrap_content"
-                    app:checkedButton="@id/p1"
-                    app:selectionRequired="true"
-                    app:singleSelection="true">
-
-                    <Button
-                        android:id="@+id/w1"
-                        style="?attr/materialButtonOutlinedStyle"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="WORK" />
-
-                    <Button
-                        android:id="@+id/p1"
-                        style="?attr/materialButtonOutlinedStyle"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="PERSONAL" />
-
-                </com.google.android.material.button.MaterialButtonToggleGroup>
-
 
 
             </RelativeLayout>
@@ -112,9 +82,9 @@
         <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:layout_constraintTop_toBottomOf="@+id/tt"
+            android:layout_margin="8dp"
             app:cardElevation="1dp"
-            android:layout_margin="8dp">
+            app:layout_constraintTop_toBottomOf="@+id/tt">
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -123,9 +93,9 @@
 
                 <ImageView
                     android:id="@+id/i2"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
                     android:layout_centerVertical="true"
-                    android:layout_width="64dp"
-                    android:layout_height="64dp"
                     android:src="@drawable/gmail" />
 
                 <com.google.android.material.textfield.TextInputLayout
@@ -133,48 +103,18 @@
                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="E Mail"
-                    android:layout_toEndOf="@id/i2"
+                    android:layout_centerVertical="true"
                     android:layout_marginLeft="16dp"
-                    >
+                    android:layout_toEndOf="@id/i2"
+                    android:hint="E Mail">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:hapticFeedbackEnabled="true" />
+                        android:hapticFeedbackEnabled="true"
+                        android:singleLine="true" />
 
                 </com.google.android.material.textfield.TextInputLayout>
-
-
-                <com.google.android.material.button.MaterialButtonToggleGroup
-                    android:id="@+id/t2"
-                    android:layout_width="match_parent"
-                    android:layout_toEndOf="@id/i2"
-                    android:layout_marginLeft="16dp"
-                    android:layout_below="@id/email"
-                    android:layout_height="wrap_content"
-                    app:checkedButton="@id/p2"
-                    app:selectionRequired="true"
-                    app:singleSelection="true">
-
-                    <Button
-                        android:id="@+id/w2"
-                        style="?attr/materialButtonOutlinedStyle"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="WORK" />
-
-                    <Button
-                        android:id="@+id/p2"
-                        style="?attr/materialButtonOutlinedStyle"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="PERSONAL" />
-                </com.google.android.material.button.MaterialButtonToggleGroup>
-
-
 
             </RelativeLayout>
 
@@ -185,9 +125,9 @@
         <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:layout_constraintTop_toBottomOf="@+id/tt"
+            android:layout_margin="8dp"
             app:cardElevation="1dp"
-            android:layout_margin="8dp">
+            app:layout_constraintTop_toBottomOf="@+id/tt">
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -196,9 +136,9 @@
 
                 <ImageView
                     android:id="@+id/i3"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
                     android:layout_centerVertical="true"
-                    android:layout_width="64dp"
-                    android:layout_height="64dp"
                     android:src="@drawable/facebook" />
 
                 <com.google.android.material.textfield.TextInputLayout
@@ -206,48 +146,18 @@
                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Facebook ID"
-                    android:layout_toEndOf="@id/i3"
+                    android:layout_centerVertical="true"
                     android:layout_marginLeft="16dp"
-                    >
+                    android:layout_toEndOf="@id/i3"
+                    android:hint="Facebook ID">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:hapticFeedbackEnabled="true" />
+                        android:hapticFeedbackEnabled="true"
+                        android:singleLine="true" />
 
                 </com.google.android.material.textfield.TextInputLayout>
-
-
-                <com.google.android.material.button.MaterialButtonToggleGroup
-                    android:id="@+id/t3"
-                    android:layout_width="match_parent"
-                    android:layout_toEndOf="@id/i3"
-                    android:layout_marginLeft="16dp"
-                    android:layout_below="@id/facebook"
-                    android:layout_height="wrap_content"
-                    app:checkedButton="@id/p3"
-                    app:selectionRequired="true"
-                    app:singleSelection="true">
-
-                    <Button
-                        android:id="@+id/w3"
-                        style="?attr/materialButtonOutlinedStyle"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="WORK" />
-
-                    <Button
-                        android:id="@+id/p3"
-                        style="?attr/materialButtonOutlinedStyle"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="PERSONAL" />
-                </com.google.android.material.button.MaterialButtonToggleGroup>
-
-
 
             </RelativeLayout>
 
@@ -258,9 +168,9 @@
         <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:layout_constraintTop_toBottomOf="@+id/tt"
+            android:layout_margin="8dp"
             app:cardElevation="1dp"
-            android:layout_margin="8dp">
+            app:layout_constraintTop_toBottomOf="@+id/tt">
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -269,9 +179,9 @@
 
                 <ImageView
                     android:id="@+id/i4"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
                     android:layout_centerVertical="true"
-                    android:layout_width="64dp"
-                    android:layout_height="64dp"
                     android:src="@drawable/linkedin" />
 
                 <com.google.android.material.textfield.TextInputLayout
@@ -279,47 +189,18 @@
                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="LinkedIn ID"
-                    android:layout_toEndOf="@id/i4"
+                    android:layout_centerVertical="true"
                     android:layout_marginLeft="16dp"
-                    >
+                    android:layout_toEndOf="@id/i4"
+                    android:hint="LinkedIn ID">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:hapticFeedbackEnabled="true" />
+                        android:hapticFeedbackEnabled="true"
+                        android:singleLine="true" />
 
                 </com.google.android.material.textfield.TextInputLayout>
-
-
-                <com.google.android.material.button.MaterialButtonToggleGroup
-                    android:id="@+id/t4"
-                    android:layout_width="match_parent"
-                    android:layout_toEndOf="@id/i4"
-                    android:layout_marginLeft="16dp"
-                    android:layout_below="@id/linkedin"
-                    android:layout_height="wrap_content"
-                    app:checkedButton="@id/w4"
-                    app:selectionRequired="true"
-                    app:singleSelection="true">
-
-                    <Button
-                        android:id="@+id/w4"
-                        style="?attr/materialButtonOutlinedStyle"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="WORK" />
-
-                    <Button
-                        android:id="@+id/p4"
-                        style="?attr/materialButtonOutlinedStyle"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="PERSONAL" />
-                </com.google.android.material.button.MaterialButtonToggleGroup>
-
 
             </RelativeLayout>
 
@@ -330,9 +211,9 @@
         <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:layout_constraintTop_toBottomOf="@+id/tt"
+            android:layout_margin="8dp"
             app:cardElevation="1dp"
-            android:layout_margin="8dp">
+            app:layout_constraintTop_toBottomOf="@+id/tt">
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -341,9 +222,9 @@
 
                 <ImageView
                     android:id="@+id/i5"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
                     android:layout_centerVertical="true"
-                    android:layout_width="64dp"
-                    android:layout_height="64dp"
                     android:src="@drawable/instagram" />
 
                 <com.google.android.material.textfield.TextInputLayout
@@ -351,48 +232,18 @@
                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Instagram ID"
-                    android:layout_toEndOf="@id/i5"
+                    android:layout_centerVertical="true"
                     android:layout_marginLeft="16dp"
-                    >
+                    android:layout_toEndOf="@id/i5"
+                    android:hint="Instagram ID">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:hapticFeedbackEnabled="true" />
+                        android:hapticFeedbackEnabled="true"
+                        android:singleLine="true" />
 
                 </com.google.android.material.textfield.TextInputLayout>
-
-
-                <com.google.android.material.button.MaterialButtonToggleGroup
-                    android:id="@+id/t5"
-                    android:layout_width="match_parent"
-                    android:layout_toEndOf="@id/i5"
-                    android:layout_marginLeft="16dp"
-                    android:layout_below="@id/insta"
-                    android:layout_height="wrap_content"
-                    app:checkedButton="@id/p5"
-                    app:selectionRequired="true"
-                    app:singleSelection="true">
-
-                    <Button
-                        android:id="@+id/w5"
-                        style="?attr/materialButtonOutlinedStyle"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="WORK" />
-
-                    <Button
-                        android:id="@+id/p5"
-                        style="?attr/materialButtonOutlinedStyle"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="PERSONAL" />
-                </com.google.android.material.button.MaterialButtonToggleGroup>
-
-
 
             </RelativeLayout>
 
@@ -403,9 +254,9 @@
         <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:layout_constraintTop_toBottomOf="@+id/tt"
+            android:layout_margin="8dp"
             app:cardElevation="1dp"
-            android:layout_margin="8dp">
+            app:layout_constraintTop_toBottomOf="@+id/tt">
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -414,9 +265,9 @@
 
                 <ImageView
                     android:id="@+id/i6"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
                     android:layout_centerVertical="true"
-                    android:layout_width="64dp"
-                    android:layout_height="64dp"
                     android:src="@drawable/snapchat" />
 
                 <com.google.android.material.textfield.TextInputLayout
@@ -424,48 +275,18 @@
                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Snapchat ID"
-                    android:layout_toEndOf="@id/i6"
+                    android:layout_centerVertical="true"
                     android:layout_marginLeft="16dp"
-                    >
+                    android:layout_toEndOf="@id/i6"
+                    android:hint="Snapchat ID">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:hapticFeedbackEnabled="true" />
+                        android:hapticFeedbackEnabled="true"
+                        android:singleLine="true" />
 
                 </com.google.android.material.textfield.TextInputLayout>
-
-
-                <com.google.android.material.button.MaterialButtonToggleGroup
-                    android:id="@+id/t6"
-                    android:layout_width="match_parent"
-                    android:layout_toEndOf="@id/i6"
-                    android:layout_marginLeft="16dp"
-                    android:layout_below="@id/snapchat"
-                    android:layout_height="wrap_content"
-                    app:checkedButton="@id/p6"
-                    app:selectionRequired="true"
-                    app:singleSelection="true">
-
-                    <Button
-                        android:id="@+id/w6"
-                        style="?attr/materialButtonOutlinedStyle"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="WORK" />
-
-                    <Button
-                        android:id="@+id/p6"
-                        style="?attr/materialButtonOutlinedStyle"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="PERSONAL" />
-                </com.google.android.material.button.MaterialButtonToggleGroup>
-
-
 
             </RelativeLayout>
 
@@ -476,9 +297,9 @@
         <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:layout_constraintTop_toBottomOf="@+id/tt"
+            android:layout_margin="8dp"
             app:cardElevation="1dp"
-            android:layout_margin="8dp">
+            app:layout_constraintTop_toBottomOf="@+id/tt">
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -487,9 +308,9 @@
 
                 <ImageView
                     android:id="@+id/i7"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
                     android:layout_centerVertical="true"
-                    android:layout_width="64dp"
-                    android:layout_height="64dp"
                     android:src="@drawable/telegram" />
 
                 <com.google.android.material.textfield.TextInputLayout
@@ -497,48 +318,18 @@
                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Telegram ID"
-                    android:layout_toEndOf="@id/i7"
+                    android:layout_centerVertical="true"
                     android:layout_marginLeft="16dp"
-                    >
+                    android:layout_toEndOf="@id/i7"
+                    android:hint="Telegram ID">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:hapticFeedbackEnabled="true" />
+                        android:hapticFeedbackEnabled="true"
+                        android:singleLine="true" />
 
                 </com.google.android.material.textfield.TextInputLayout>
-
-
-                <com.google.android.material.button.MaterialButtonToggleGroup
-                    android:id="@+id/t7"
-                    android:layout_width="match_parent"
-                    android:layout_toEndOf="@id/i7"
-                    android:layout_marginLeft="16dp"
-                    android:layout_below="@id/telegram"
-                    android:layout_height="wrap_content"
-                    app:checkedButton="@id/w7"
-                    app:selectionRequired="true"
-                    app:singleSelection="true">
-
-                    <Button
-                        android:id="@+id/w7"
-                        style="?attr/materialButtonOutlinedStyle"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="WORK" />
-
-                    <Button
-                        android:id="@+id/p7"
-                        style="?attr/materialButtonOutlinedStyle"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="PERSONAL" />
-                </com.google.android.material.button.MaterialButtonToggleGroup>
-
-
 
             </RelativeLayout>
 
@@ -549,9 +340,9 @@
         <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:layout_constraintTop_toBottomOf="@+id/tt"
+            android:layout_margin="8dp"
             app:cardElevation="1dp"
-            android:layout_margin="8dp">
+            app:layout_constraintTop_toBottomOf="@+id/tt">
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -560,9 +351,9 @@
 
                 <ImageView
                     android:id="@+id/i8"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
                     android:layout_centerVertical="true"
-                    android:layout_width="64dp"
-                    android:layout_height="64dp"
                     android:src="@drawable/twitter" />
 
                 <com.google.android.material.textfield.TextInputLayout
@@ -570,48 +361,18 @@
                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Twitter ID"
-                    android:layout_toEndOf="@id/i8"
+                    android:layout_centerVertical="true"
                     android:layout_marginLeft="16dp"
-                    >
+                    android:layout_toEndOf="@id/i8"
+                    android:hint="Twitter ID">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:hapticFeedbackEnabled="true" />
+                        android:hapticFeedbackEnabled="true"
+                        android:singleLine="true" />
 
                 </com.google.android.material.textfield.TextInputLayout>
-
-
-                <com.google.android.material.button.MaterialButtonToggleGroup
-                    android:id="@+id/t8"
-                    android:layout_width="match_parent"
-                    android:layout_toEndOf="@id/i8"
-                    android:layout_marginLeft="16dp"
-                    android:layout_below="@id/twitter"
-                    android:layout_height="wrap_content"
-                    app:checkedButton="@id/p8"
-                    app:selectionRequired="true"
-                    app:singleSelection="true">
-
-                    <Button
-                        android:id="@+id/w8"
-                        style="?attr/materialButtonOutlinedStyle"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="WORK" />
-
-                    <Button
-                        android:id="@+id/p8"
-                        style="?attr/materialButtonOutlinedStyle"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="PERSONAL" />
-                </com.google.android.material.button.MaterialButtonToggleGroup>
-
-
 
             </RelativeLayout>
 
@@ -622,9 +383,9 @@
         <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:layout_constraintTop_toBottomOf="@+id/tt"
+            android:layout_margin="8dp"
             app:cardElevation="1dp"
-            android:layout_margin="8dp">
+            app:layout_constraintTop_toBottomOf="@+id/tt">
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -633,9 +394,9 @@
 
                 <ImageView
                     android:id="@+id/i9"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
                     android:layout_centerVertical="true"
-                    android:layout_width="64dp"
-                    android:layout_height="64dp"
                     android:src="@drawable/whatsapp" />
 
                 <com.google.android.material.textfield.TextInputLayout
@@ -643,48 +404,18 @@
                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Phone Number"
-                    android:layout_toEndOf="@id/i9"
+                    android:layout_centerVertical="true"
                     android:layout_marginLeft="16dp"
-                    >
+                    android:layout_toEndOf="@id/i9"
+                    android:hint="Phone Number">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:hapticFeedbackEnabled="true" />
+                        android:hapticFeedbackEnabled="true"
+                        android:singleLine="true" />
 
                 </com.google.android.material.textfield.TextInputLayout>
-
-
-                <com.google.android.material.button.MaterialButtonToggleGroup
-                    android:id="@+id/t9"
-                    android:layout_width="match_parent"
-                    android:layout_toEndOf="@id/i9"
-                    android:layout_marginLeft="16dp"
-                    android:layout_below="@id/whatsapp"
-                    android:layout_height="wrap_content"
-                    app:checkedButton="@id/w9"
-                    app:selectionRequired="true"
-                    app:singleSelection="true">
-
-                    <Button
-                        android:id="@+id/w9"
-                        style="?attr/materialButtonOutlinedStyle"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="WORK" />
-
-                    <Button
-                        android:id="@+id/p9"
-                        style="?attr/materialButtonOutlinedStyle"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="PERSONAL" />
-                </com.google.android.material.button.MaterialButtonToggleGroup>
-
-
 
             </RelativeLayout>
 
@@ -695,9 +426,9 @@
         <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:layout_constraintTop_toBottomOf="@+id/tt"
+            android:layout_margin="8dp"
             app:cardElevation="1dp"
-            android:layout_margin="8dp">
+            app:layout_constraintTop_toBottomOf="@+id/tt">
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -706,9 +437,9 @@
 
                 <ImageView
                     android:id="@+id/i11"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
                     android:layout_centerVertical="true"
-                    android:layout_width="64dp"
-                    android:layout_height="64dp"
                     android:src="@drawable/maps" />
 
                 <com.google.android.material.textfield.TextInputLayout
@@ -716,48 +447,18 @@
                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Dropped Pin Link"
-                    android:layout_toEndOf="@id/i11"
+                    android:layout_centerVertical="true"
                     android:layout_marginLeft="16dp"
-                    >
+                    android:layout_toEndOf="@id/i11"
+                    android:hint="Dropped Pin Link">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:hapticFeedbackEnabled="true" />
+                        android:hapticFeedbackEnabled="true"
+                        android:singleLine="true" />
 
                 </com.google.android.material.textfield.TextInputLayout>
-
-
-                <com.google.android.material.button.MaterialButtonToggleGroup
-                    android:id="@+id/t11"
-                    android:layout_width="match_parent"
-                    android:layout_toEndOf="@id/i11"
-                    android:layout_marginLeft="16dp"
-                    android:layout_below="@id/map"
-                    android:layout_height="wrap_content"
-                    app:checkedButton="@id/w11"
-                    app:selectionRequired="true"
-                    app:singleSelection="true">
-
-                    <Button
-                        android:id="@+id/w11"
-                        style="?attr/materialButtonOutlinedStyle"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="WORK" />
-
-                    <Button
-                        android:id="@+id/p11"
-                        style="?attr/materialButtonOutlinedStyle"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="PERSONAL" />
-                </com.google.android.material.button.MaterialButtonToggleGroup>
-
-
 
             </RelativeLayout>
 
@@ -768,12 +469,11 @@
         <Button
             android:id="@+id/done"
             style="?attr/materialButtonOutlinedStyle"
-            android:text="SAVE"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            app:strokeColor = "@color/colorPrimary"
-            android:layout_margin = "16dp"
-            />
+            android:layout_margin="16dp"
+            android:text="SAVE"
+            app:strokeColor="@color/colorPrimary" />
 
     </LinearLayout>
 </ScrollView>
