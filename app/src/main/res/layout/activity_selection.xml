@@ -67,42 +67,27 @@
             <soup.neumorphism.NeumorphCardView
                 android:id="@+id/flat_card"
                 style="@style/Widget.Neumorph.CardView"
-                app:neumorph_strokeWidth="2dp"
                 android:layout_width="150dp"
                 android:layout_height="150dp"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="48dp"
                 android:onClick="select"
                 app:neumorph_lightSource="rightTop"
-                app:neumorph_shapeType="flat">
+                app:neumorph_shapeType="flat"
+                app:neumorph_strokeWidth="2dp">
 
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical">
+                <ImageView
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/phone" />
 
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="8dp"
-                        android:padding="3dp"
-                        android:src="@drawable/home" />
-
-                    <ImageView
-                        android:layout_width="45dp"
-                        android:layout_height="45dp"
-                        android:layout_centerInParent="true"
-                        android:src="@drawable/phone" />
-
-
-                </RelativeLayout>
 
             </soup.neumorphism.NeumorphCardView>
 
             <soup.neumorphism.NeumorphCardView
                 android:id="@+id/flat_card1"
                 style="@style/Widget.Neumorph.CardView"
-                app:neumorph_strokeWidth="2dp"
                 android:layout_width="150dp"
                 android:layout_height="150dp"
                 android:layout_alignParentEnd="true"
@@ -110,36 +95,20 @@
                 android:layout_marginEnd="16dp"
                 android:onClick="select"
                 app:neumorph_lightSource="rightTop"
-                app:neumorph_shapeType="flat">
+                app:neumorph_shapeType="flat"
+                app:neumorph_strokeWidth="2dp">
 
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical">
-
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="8dp"
-                        android:padding="3dp"
-                        android:src="@drawable/work" />
-
-                    <ImageView
-                        android:layout_width="45dp"
-                        android:layout_height="45dp"
-                        android:layout_centerInParent="true"
-                        android:layout_marginTop="7dp"
-                        android:src="@drawable/gmail" />
-
-
-                </RelativeLayout>
+                <ImageView
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/gmail" />
 
             </soup.neumorphism.NeumorphCardView>
 
             <soup.neumorphism.NeumorphCardView
                 android:id="@+id/flat_card2"
                 style="@style/Widget.Neumorph.CardView"
-                app:neumorph_strokeWidth="2dp"
                 android:layout_width="150dp"
                 android:layout_height="150dp"
                 android:layout_below="@id/flat_card"
@@ -147,36 +116,20 @@
                 android:layout_marginTop="48dp"
                 android:onClick="select"
                 app:neumorph_lightSource="rightTop"
-                app:neumorph_shapeType="flat">
+                app:neumorph_shapeType="flat"
+                app:neumorph_strokeWidth="2dp">
 
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical">
-
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="8dp"
-                        android:padding="3dp"
-                        android:src="@drawable/home" />
-
-                    <ImageView
-                        android:layout_width="45dp"
-                        android:layout_height="45dp"
-                        android:layout_centerInParent="true"
-                        android:layout_marginTop="7dp"
-                        android:src="@drawable/facebook" />
-
-
-                </RelativeLayout>
+                <ImageView
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/facebook" />
 
             </soup.neumorphism.NeumorphCardView>
 
             <soup.neumorphism.NeumorphCardView
                 android:id="@+id/flat_card3"
                 style="@style/Widget.Neumorph.CardView"
-                app:neumorph_strokeWidth="2dp"
                 android:layout_width="150dp"
                 android:layout_height="150dp"
                 android:layout_below="@id/flat_card"
@@ -185,36 +138,20 @@
                 android:layout_marginEnd="16dp"
                 android:onClick="select"
                 app:neumorph_lightSource="rightTop"
-                app:neumorph_shapeType="flat">
+                app:neumorph_shapeType="flat"
+                app:neumorph_strokeWidth="2dp">
 
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical">
-
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="8dp"
-                        android:padding="3dp"
-                        android:src="@drawable/work" />
-
-                    <ImageView
-                        android:layout_width="45dp"
-                        android:layout_height="45dp"
-                        android:layout_centerInParent="true"
-                        android:layout_marginTop="7dp"
-                        android:src="@drawable/linkedin" />
-
-
-                </RelativeLayout>
+                <ImageView
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/linkedin" />
 
             </soup.neumorphism.NeumorphCardView>
 
             <soup.neumorphism.NeumorphCardView
                 android:id="@+id/flat_card4"
                 style="@style/Widget.Neumorph.CardView"
-                app:neumorph_strokeWidth="2dp"
                 android:layout_width="150dp"
                 android:layout_height="150dp"
                 android:layout_below="@id/flat_card2"
@@ -222,36 +159,20 @@
                 android:layout_marginTop="48dp"
                 android:onClick="select"
                 app:neumorph_lightSource="rightTop"
-                app:neumorph_shapeType="flat">
+                app:neumorph_shapeType="flat"
+                app:neumorph_strokeWidth="2dp">
 
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical">
-
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="8dp"
-                        android:padding="3dp"
-                        android:src="@drawable/home" />
-
-                    <ImageView
-                        android:layout_width="45dp"
-                        android:layout_height="45dp"
-                        android:layout_centerInParent="true"
-                        android:layout_marginTop="7dp"
-                        android:src="@drawable/instagram" />
-
-
-                </RelativeLayout>
+                <ImageView
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/instagram" />
 
             </soup.neumorphism.NeumorphCardView>
 
             <soup.neumorphism.NeumorphCardView
                 android:id="@+id/flat_card5"
                 style="@style/Widget.Neumorph.CardView"
-                app:neumorph_strokeWidth="2dp"
                 android:layout_width="150dp"
                 android:layout_height="150dp"
                 android:layout_below="@id/flat_card2"
@@ -260,36 +181,20 @@
                 android:layout_marginEnd="16dp"
                 android:onClick="select"
                 app:neumorph_lightSource="rightTop"
-                app:neumorph_shapeType="flat">
+                app:neumorph_shapeType="flat"
+                app:neumorph_strokeWidth="2dp">
 
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical">
-
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="8dp"
-                        android:padding="3dp"
-                        android:src="@drawable/work" />
-
-                    <ImageView
-                        android:layout_width="45dp"
-                        android:layout_height="45dp"
-                        android:layout_centerInParent="true"
-                        android:layout_marginTop="7dp"
-                        android:src="@drawable/telegram" />
-
-
-                </RelativeLayout>
+                <ImageView
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/telegram" />
 
             </soup.neumorphism.NeumorphCardView>
 
             <soup.neumorphism.NeumorphCardView
                 android:id="@+id/flat_card6"
                 style="@style/Widget.Neumorph.CardView"
-                app:neumorph_strokeWidth="2dp"
                 android:layout_width="150dp"
                 android:layout_height="150dp"
                 android:layout_below="@id/flat_card4"
@@ -297,75 +202,42 @@
                 android:layout_marginTop="48dp"
                 android:onClick="select"
                 app:neumorph_lightSource="rightTop"
-                app:neumorph_shapeType="flat">
+                app:neumorph_shapeType="flat"
+                app:neumorph_strokeWidth="2dp">
 
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical">
-
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="8dp"
-                        android:padding="3dp"
-                        android:src="@drawable/home" />
-
-                    <ImageView
-                        android:layout_width="45dp"
-                        android:layout_height="45dp"
-                        android:layout_centerInParent="true"
-                        android:layout_marginTop="7dp"
-                        android:src="@drawable/twitter" />
-
-
-                </RelativeLayout>
+                <ImageView
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/twitter" />
 
             </soup.neumorphism.NeumorphCardView>
 
             <soup.neumorphism.NeumorphCardView
                 android:id="@+id/flat_card7"
                 style="@style/Widget.Neumorph.CardView"
-                app:neumorph_strokeWidth="2dp"
                 android:layout_width="150dp"
                 android:layout_height="150dp"
                 android:layout_below="@id/flat_card4"
-
                 android:layout_alignParentEnd="true"
                 android:layout_marginTop="48dp"
                 android:layout_marginEnd="16dp"
                 android:onClick="select"
                 app:neumorph_lightSource="rightTop"
-                app:neumorph_shapeType="flat">
+                app:neumorph_shapeType="flat"
+                app:neumorph_strokeWidth="2dp">
 
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical">
-
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="8dp"
-                        android:padding="3dp"
-                        android:src="@drawable/work" />
-
-                    <ImageView
-                        android:layout_width="45dp"
-                        android:layout_height="45dp"
-                        android:layout_centerInParent="true"
-                        android:layout_marginTop="7dp"
-                        android:src="@drawable/whatsapp" />
-
-
-                </RelativeLayout>
+                <ImageView
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/whatsapp" />
 
             </soup.neumorphism.NeumorphCardView>
 
             <soup.neumorphism.NeumorphCardView
                 android:id="@+id/flat_card8"
                 style="@style/Widget.Neumorph.CardView"
-                app:neumorph_strokeWidth="2dp"
                 android:layout_width="150dp"
                 android:layout_height="150dp"
                 android:layout_below="@id/flat_card6"
@@ -373,36 +245,21 @@
                 android:layout_marginTop="48dp"
                 android:onClick="select"
                 app:neumorph_lightSource="rightTop"
-                app:neumorph_shapeType="flat">
+                app:neumorph_shapeType="flat"
+                app:neumorph_strokeWidth="2dp">
 
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical">
+                <ImageView
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/snapchat" />
 
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="8dp"
-                        android:padding="3dp"
-                        android:src="@drawable/home" />
-
-                    <ImageView
-                        android:layout_width="45dp"
-                        android:layout_height="45dp"
-                        android:layout_centerInParent="true"
-                        android:layout_marginTop="7dp"
-                        android:src="@drawable/snapchat" />
-
-
-                </RelativeLayout>
 
             </soup.neumorphism.NeumorphCardView>
 
             <soup.neumorphism.NeumorphCardView
                 android:id="@+id/flat_card9"
                 style="@style/Widget.Neumorph.CardView"
-                app:neumorph_strokeWidth="2dp"
                 android:layout_width="150dp"
                 android:layout_height="150dp"
                 android:layout_below="@id/flat_card6"
@@ -411,29 +268,15 @@
                 android:layout_marginEnd="16dp"
                 android:onClick="select"
                 app:neumorph_lightSource="rightTop"
-                app:neumorph_shapeType="flat">
+                app:neumorph_shapeType="flat"
+                app:neumorph_strokeWidth="2dp">
 
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical">
+                <ImageView
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/maps" />
 
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="8dp"
-                        android:padding="3dp"
-                        android:src="@drawable/work" />
-
-                    <ImageView
-                        android:layout_width="45dp"
-                        android:layout_height="45dp"
-                        android:layout_centerInParent="true"
-                        android:layout_marginTop="7dp"
-                        android:src="@drawable/maps" />
-
-
-                </RelativeLayout>
 
             </soup.neumorphism.NeumorphCardView>
 
