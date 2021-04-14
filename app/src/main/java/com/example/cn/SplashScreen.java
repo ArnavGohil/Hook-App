@@ -1,15 +1,11 @@
 package com.example.cn;
 
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.animation.Animator;
-import android.app.Activity;
 import android.app.ActivityOptions;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 
-import com.airbnb.lottie.LottieAnimationView;
+import androidx.appcompat.app.AppCompatActivity;
 
 public class SplashScreen extends AppCompatActivity {
 
@@ -21,6 +17,6 @@ public class SplashScreen extends AppCompatActivity {
         new Handler().postDelayed(() -> {
             ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(SplashScreen.this);
             startActivity(new Intent(SplashScreen.this, MainActivity.class), options.toBundle());
-        },1750);
+        }, 1750);
     }
 }

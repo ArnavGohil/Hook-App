@@ -19,8 +19,7 @@
         <activity android:name=".SelectionActivity" />
         <activity android:name=".RegistrationActivity"
             android:theme="@style/AppTheme"/>
-        <activity android:name=".MainActivity"
-            android:theme="@style/Theme1"/>
+        <activity android:name=".MainActivity" />
     </application>
 
 </manifest>

@@ -1,12 +1,10 @@
 package com.example.cn;
 
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.app.ActivityOptions;
-import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.airbnb.lottie.LottieAnimationView;
 
@@ -24,7 +22,7 @@ public class SharingActivity extends AppCompatActivity {
             anim.playAnimation();
             anim.loop(false);
             tv.setText("Done !");
-        },2500);
+        }, 2500);
 
     }
 }
