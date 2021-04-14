@@ -3,16 +3,10 @@ package com.example.cn;
 import android.app.ActivityOptions;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.content.pm.PackageManager;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
-
-import com.google.android.material.snackbar.BaseTransientBottomBar;
-import com.google.android.material.snackbar.Snackbar;
 
 import soup.neumorphism.NeumorphCardView;
 import soup.neumorphism.NeumorphFloatingActionButton;
@@ -38,15 +32,6 @@ public class SelectionActivity extends AppCompatActivity {
 
         NeumorphFloatingActionButton fab = findViewById(R.id.fab);
         fab.setOnClickListener(view -> {
-
-            if(true)
-            {
-                Snackbar.make(findViewById(R.id.rv), "NFC not supported on device. Try QR based sharing.", Snackbar.LENGTH_SHORT)
-                        .setTextColor(Color.parseColor("#F9AA33"))
-                        .setBackgroundTint(Color.parseColor("#344955"))
-                        .show();
-                return;
-            }
 
             SharedPreferences preferences = getSharedPreferences(getString(R.string.file_name), MODE_PRIVATE);
 
@@ -84,7 +69,7 @@ public class SelectionActivity extends AppCompatActivity {
             if (address.getStrokeColor() == getColorStateList(R.color.selection))
                 str = str.concat("\"" + getString(R.string.user_address) + "|" + preferences.getString(getString(R.string.user_address), "") + "\",");
 
-            str = str.substring(0 , str.length() - 1).concat("]") ;
+            str = str.substring(0, str.length() - 1).concat("]");
             ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(SelectionActivity.this);
             startActivity(new Intent(SelectionActivity.this, SharingActivity.class).putExtra(getString(R.string.selected), str), options.toBundle());
         });

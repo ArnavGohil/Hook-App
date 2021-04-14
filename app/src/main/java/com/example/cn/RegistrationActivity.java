@@ -27,7 +27,7 @@ public class RegistrationActivity extends AppCompatActivity {
 
     int RESULT_LOAD_IMAGE = 9;
     ImageView photo;
-    String imageEncoded = "" ;
+    String imageEncoded = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
