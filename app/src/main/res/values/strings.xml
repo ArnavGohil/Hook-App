@@ -1,3 +1,17 @@
 <resources>
     <string name="app_name">CN</string>
+
+    <string name="file_name">values</string>
+    <string name="user_photo">photo</string>
+    <string name="user_name">name</string>
+    <string name="user_phone">phone</string>
+    <string name="user_mail">mail</string>
+    <string name="user_facebook">facebook</string>
+    <string name="user_linkedin">linkedin</string>
+    <string name="user_instagram">instagram</string>
+    <string name="user_telegram">telegram</string>
+    <string name="user_twitter">twitter</string>
+    <string name="user_whatsapp">whatsapp</string>
+    <string name="user_snapchat">snapchat</string>
+    <string name="user_address">address</string>
 </resources>
