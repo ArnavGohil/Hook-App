@@ -37,17 +37,17 @@ public class RegistrationActivity extends AppCompatActivity {
         SharedPreferences preferences = getSharedPreferences(getString(R.string.file_name), MODE_PRIVATE);
         SharedPreferences.Editor editor = preferences.edit();
 
-        EditText name = findViewById(R.id.name);
-        EditText phone = findViewById(R.id.phone);
-        EditText email = findViewById(R.id.email);
-        EditText facebook = findViewById(R.id.facebook);
-        EditText linkedin = findViewById(R.id.linkedin);
-        EditText instagram = findViewById(R.id.insta);
-        EditText telegram = findViewById(R.id.telegram);
-        EditText twitter = findViewById(R.id.twitter);
-        EditText whatsapp = findViewById(R.id.whatsapp);
-        EditText snapchat = findViewById(R.id.snapchat);
-        EditText address = findViewById(R.id.map);
+        EditText name = findViewById(R.id.name),
+                phone = findViewById(R.id.phone),
+                email = findViewById(R.id.email),
+                facebook = findViewById(R.id.facebook),
+                linkedin = findViewById(R.id.linkedin),
+                instagram = findViewById(R.id.insta),
+                telegram = findViewById(R.id.telegram),
+                twitter = findViewById(R.id.twitter),
+                whatsapp = findViewById(R.id.whatsapp),
+                snapchat = findViewById(R.id.snapchat),
+                address = findViewById(R.id.map);
 
         photo = findViewById(R.id.regPhoto);
         photo.setOnClickListener(view -> {

@@ -15,6 +15,11 @@ public class SharingActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sharing);
 
+        Bundle bundle = getIntent().getExtras();
+        String str = bundle.getString(getString(R.string.selected));
+
+        String[] selected = str.split(" ");
+
         TextView tv = findViewById(R.id.tv);
         LottieAnimationView anim = findViewById(R.id.animfinal);
         new Handler().postDelayed(() -> {

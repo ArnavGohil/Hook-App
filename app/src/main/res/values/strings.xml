@@ -14,4 +14,5 @@
     <string name="user_whatsapp">whatsapp</string>
     <string name="user_snapchat">snapchat</string>
     <string name="user_address">address</string>
+    <string name="selected">selected</string>
 </resources>
