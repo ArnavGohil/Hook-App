@@ -2,10 +2,17 @@ package com.example.cn;
 
 import android.app.ActivityOptions;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.content.pm.PackageManager;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.google.android.material.snackbar.BaseTransientBottomBar;
+import com.google.android.material.snackbar.Snackbar;
 
 import soup.neumorphism.NeumorphCardView;
 import soup.neumorphism.NeumorphFloatingActionButton;
@@ -32,39 +39,52 @@ public class SelectionActivity extends AppCompatActivity {
         NeumorphFloatingActionButton fab = findViewById(R.id.fab);
         fab.setOnClickListener(view -> {
 
-            String str = "";
+            if(true)
+            {
+                Snackbar.make(findViewById(R.id.rv), "NFC not supported on device. Try QR based sharing.", Snackbar.LENGTH_SHORT)
+                        .setTextColor(Color.parseColor("#F9AA33"))
+                        .setBackgroundTint(Color.parseColor("#344955"))
+                        .show();
+                return;
+            }
+
+            SharedPreferences preferences = getSharedPreferences(getString(R.string.file_name), MODE_PRIVATE);
+
+            String str = "[";
+            str = str.concat("\"" + preferences.getString(getString(R.string.user_name), "") + "\",");
+            str = str.concat("\"" + preferences.getString(getString(R.string.user_phone), "") + "\",");
 
             if (phone.getStrokeColor() == getColorStateList(R.color.selection))
-                str = str.concat(getString(R.string.user_phone) + " ");
+                str = str.concat("\"" + getString(R.string.user_phone) + "|" + preferences.getString(getString(R.string.user_phone), "") + "\",");
 
             if (email.getStrokeColor() == getColorStateList(R.color.selection))
-                str = str.concat(getString(R.string.user_mail) + " ");
+                str = str.concat("\"" + getString(R.string.user_mail) + "|" + preferences.getString(getString(R.string.user_mail), "") + "\",");
 
             if (facebook.getStrokeColor() == getColorStateList(R.color.selection))
-                str = str.concat(getString(R.string.user_facebook) + " ");
+                str = str.concat("\"" + getString(R.string.user_facebook) + "|" + preferences.getString(getString(R.string.user_facebook), "") + "\",");
 
             if (linkedin.getStrokeColor() == getColorStateList(R.color.selection))
-                str = str.concat(getString(R.string.user_linkedin) + " ");
+                str = str.concat("\"" + getString(R.string.user_linkedin) + "|" + preferences.getString(getString(R.string.user_linkedin), "") + "\",");
 
             if (instagram.getStrokeColor() == getColorStateList(R.color.selection))
-                str = str.concat(getString(R.string.user_instagram) + " ");
+                str = str.concat("\"" + getString(R.string.user_instagram) + "|" + preferences.getString(getString(R.string.user_instagram), "") + "\",");
 
             if (telegram.getStrokeColor() == getColorStateList(R.color.selection))
-                str = str.concat(getString(R.string.user_telegram) + " ");
+                str = str.concat("\"" + getString(R.string.user_telegram) + "|" + preferences.getString(getString(R.string.user_telegram), "") + "\",");
 
             if (twitter.getStrokeColor() == getColorStateList(R.color.selection))
-                str = str.concat(getString(R.string.user_twitter) + " ");
+                str = str.concat("\"" + getString(R.string.user_twitter) + "|" + preferences.getString(getString(R.string.user_twitter), "") + "\",");
 
             if (whatsapp.getStrokeColor() == getColorStateList(R.color.selection))
-                str = str.concat(getString(R.string.user_whatsapp) + " ");
+                str = str.concat("\"" + getString(R.string.user_whatsapp) + "|" + preferences.getString(getString(R.string.user_whatsapp), "") + "\",");
 
             if (snapchat.getStrokeColor() == getColorStateList(R.color.selection))
-                str = str.concat(getString(R.string.user_snapchat) + " ");
+                str = str.concat("\"" + getString(R.string.user_snapchat) + "|" + preferences.getString(getString(R.string.user_snapchat), "") + "\",");
 
             if (address.getStrokeColor() == getColorStateList(R.color.selection))
-                str = str.concat(getString(R.string.user_address) + " ");
+                str = str.concat("\"" + getString(R.string.user_address) + "|" + preferences.getString(getString(R.string.user_address), "") + "\",");
 
-
+            str = str.substring(0 , str.length() - 1).concat("]") ;
             ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(SelectionActivity.this);
             startActivity(new Intent(SelectionActivity.this, SharingActivity.class).putExtra(getString(R.string.selected), str), options.toBundle());
         });
