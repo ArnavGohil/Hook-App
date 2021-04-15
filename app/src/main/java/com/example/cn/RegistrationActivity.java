@@ -67,26 +67,9 @@ public class RegistrationActivity extends AppCompatActivity {
                 return;
             }
 
-            String phn = phone.getText().toString();
-            if (phn.length() == 0) {
-                Snackbar.make(findViewById(R.id.scrollView), "Phone can not be empty  !", Snackbar.LENGTH_SHORT)
-                        .setTextColor(Color.parseColor("#F9AA33"))
-                        .setBackgroundTint(Color.parseColor("#344955"))
-                        .show();
-                return;
-            }
-
-            String em = email.getText().toString();
-            if (em.length() == 0) {
-                Snackbar.make(findViewById(R.id.scrollView), "E-Mail can not be empty  !", Snackbar.LENGTH_SHORT)
-                        .setTextColor(Color.parseColor("#F9AA33"))
-                        .setBackgroundTint(Color.parseColor("#344955"))
-                        .show();
-
-                return;
-            }
-
-            String fb = facebook.getText().toString(),
+            String phn = phone.getText().toString(),
+                    em = email.getText().toString(),
+                    fb = facebook.getText().toString(),
                     lin = linkedin.getText().toString(),
                     insta = instagram.getText().toString(),
                     tele = telegram.getText().toString(),

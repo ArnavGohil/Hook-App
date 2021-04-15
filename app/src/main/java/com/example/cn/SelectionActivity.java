@@ -40,34 +40,34 @@ public class SelectionActivity extends AppCompatActivity {
             str = str.concat("\"" + preferences.getString(getString(R.string.user_phone), "") + "\",");
 
             if (phone.getStrokeColor() == getColorStateList(R.color.selection))
-                str = str.concat("\"" + getString(R.string.user_phone) + "|" + preferences.getString(getString(R.string.user_phone), "") + "\",");
+                str = str.concat("1|\"" + preferences.getString(getString(R.string.user_phone), "") + "\",");
 
             if (email.getStrokeColor() == getColorStateList(R.color.selection))
-                str = str.concat("\"" + getString(R.string.user_mail) + "|" + preferences.getString(getString(R.string.user_mail), "") + "\",");
+                str = str.concat("2|\"" + preferences.getString(getString(R.string.user_mail), "") + "\",");
 
             if (facebook.getStrokeColor() == getColorStateList(R.color.selection))
-                str = str.concat("\"" + getString(R.string.user_facebook) + "|" + preferences.getString(getString(R.string.user_facebook), "") + "\",");
+                str = str.concat("3|\"" + preferences.getString(getString(R.string.user_facebook), "") + "\",");
 
             if (linkedin.getStrokeColor() == getColorStateList(R.color.selection))
-                str = str.concat("\"" + getString(R.string.user_linkedin) + "|" + preferences.getString(getString(R.string.user_linkedin), "") + "\",");
+                str = str.concat("4|\"" + preferences.getString(getString(R.string.user_linkedin), "") + "\",");
 
             if (instagram.getStrokeColor() == getColorStateList(R.color.selection))
-                str = str.concat("\"" + getString(R.string.user_instagram) + "|" + preferences.getString(getString(R.string.user_instagram), "") + "\",");
+                str = str.concat("5|\"" + preferences.getString(getString(R.string.user_instagram), "") + "\",");
 
             if (telegram.getStrokeColor() == getColorStateList(R.color.selection))
-                str = str.concat("\"" + getString(R.string.user_telegram) + "|" + preferences.getString(getString(R.string.user_telegram), "") + "\",");
+                str = str.concat("6|\"" + preferences.getString(getString(R.string.user_telegram), "") + "\",");
 
             if (twitter.getStrokeColor() == getColorStateList(R.color.selection))
-                str = str.concat("\"" + getString(R.string.user_twitter) + "|" + preferences.getString(getString(R.string.user_twitter), "") + "\",");
+                str = str.concat("7|\"" + preferences.getString(getString(R.string.user_twitter), "") + "\",");
 
             if (whatsapp.getStrokeColor() == getColorStateList(R.color.selection))
-                str = str.concat("\"" + getString(R.string.user_whatsapp) + "|" + preferences.getString(getString(R.string.user_whatsapp), "") + "\",");
+                str = str.concat("8|\"" + preferences.getString(getString(R.string.user_whatsapp), "") + "\",");
 
             if (snapchat.getStrokeColor() == getColorStateList(R.color.selection))
-                str = str.concat("\"" + getString(R.string.user_snapchat) + "|" + preferences.getString(getString(R.string.user_snapchat), "") + "\",");
+                str = str.concat("9|\"" + preferences.getString(getString(R.string.user_snapchat), "") + "\",");
 
             if (address.getStrokeColor() == getColorStateList(R.color.selection))
-                str = str.concat("\"" + getString(R.string.user_address) + "|" + preferences.getString(getString(R.string.user_address), "") + "\",");
+                str = str.concat("10|\"" + preferences.getString(getString(R.string.user_address), "") + "\",");
 
             str = str.substring(0, str.length() - 1).concat("]");
             ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(SelectionActivity.this);
