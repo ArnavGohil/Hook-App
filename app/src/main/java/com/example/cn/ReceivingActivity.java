@@ -3,13 +3,13 @@ package com.example.cn;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.net.Uri;
 import android.os.Bundle;
+import android.provider.ContactsContract;
 import android.util.Base64;
-import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -25,6 +25,7 @@ public class ReceivingActivity extends AppCompatActivity {
 
     ImageView photo;
     NeumorphCardView phone, email, facebook, linkedin, instagram, telegram, twitter, whatsapp, snapchat, address;
+    String naam;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,10 +58,10 @@ public class ReceivingActivity extends AppCompatActivity {
         try {
             JSONArray jsonArray = new JSONArray(data);
 
-            name.setText(jsonArray.getString(0));
+            naam = jsonArray.getString(0);
             setPhoto(jsonArray.getString(1));
 
-            for (int i = 2; i < jsonArray.length(); i++) {
+            for (int i = 2 ; i < jsonArray.length(); i++) {
                 String x = jsonArray.getString(i);
                 int loc = x.indexOf('|');
                 int j = Integer.parseInt(x.substring(0, loc));
@@ -76,11 +77,12 @@ public class ReceivingActivity extends AppCompatActivity {
 
         for (int i = 1; i <= 10; i++) {
             if (!set.contains(i)) {
-                NeumorphCardView c = returnView(i);
-                c.setOnClickListener(view -> {
+                returnView(i).setOnClickListener(view -> {
                 });
             }
         }
+
+        name.setText(naam);
 
     }
 
@@ -115,44 +117,66 @@ public class ReceivingActivity extends AppCompatActivity {
         switch (i) {
             case 1:
                 return view -> {
-                    Toast.makeText(this, "Clicked Without Crash", Toast.LENGTH_SHORT).show();
-                    Log.e("TAG", "Hua kuch");
+                    Intent intent = new Intent(ContactsContract.Intents.Insert.ACTION);
+                    intent.setType(ContactsContract.RawContacts.CONTENT_TYPE);
+                    intent.putExtra(ContactsContract.Intents.Insert.NAME, naam);
+                    intent.putExtra(ContactsContract.Intents.Insert.PHONE, input);
+                    startActivity(intent);
                 };
             case 2:
                 return view -> {
-                    // TODO Something here
+                    Intent intent = new Intent(Intent.ACTION_SENDTO);
+                    intent.setData(Uri.parse("mailto:")); // only email apps should handle this
+                    intent.putExtra(Intent.EXTRA_EMAIL, input);
+                    startActivity(intent);
                 };
             case 3:
                 return view -> {
-                    // TODO Something here
+                    Intent intent = new Intent(Intent.ACTION_VIEW);
+                    intent.setData(Uri.parse("https://www.facebook.com/" + input));
+                    startActivity(intent);
                 };
             case 4:
                 return view -> {
-                    // TODO Something here
+                    Intent intent = new Intent(Intent.ACTION_VIEW);
+                    intent.setData(Uri.parse("http://linkedin.com/in/" + input));
+                    startActivity(intent);
                 };
             case 5:
                 return view -> {
-                    // TODO Something here
+                    Intent intent = new Intent(Intent.ACTION_VIEW);
+                    intent.setData(Uri.parse("www.instagram.com/" + input));
+                    startActivity(intent);
                 };
             case 6:
                 return view -> {
-                    // TODO Something here
+                    Intent intent = new Intent(Intent.ACTION_VIEW);
+                    intent.setData(Uri.parse("https://t.me/" + input));
+                    startActivity(intent);
                 };
             case 7:
                 return view -> {
-                    // TODO Something here
+                    Intent intent = new Intent(Intent.ACTION_VIEW);
+                    intent.setData(Uri.parse("www.twitter.com/" + input));
+                    startActivity(intent);
                 };
             case 8:
                 return view -> {
-                    // TODO Something here
+                    Intent intent = new Intent(Intent.ACTION_VIEW);
+                    intent.setData(Uri.parse("https://wa.me/" + input));
+                    startActivity(intent);
                 };
             case 9:
                 return view -> {
-                    // TODO Something here
+                    Intent intent = new Intent(Intent.ACTION_VIEW);
+                    intent.setData(Uri.parse("https://www.snapchat.com/add/" + input));
+                    startActivity(intent);
                 };
             case 10:
                 return view -> {
-                    // TODO Something here
+                    Intent intent = new Intent(Intent.ACTION_VIEW);
+                    intent.setData(Uri.parse("https://www.google.com/maps/place/" + input.replace(" ", "%20").replace("+", "%2B")));
+                    startActivity(intent);
                 };
         }
         return null;

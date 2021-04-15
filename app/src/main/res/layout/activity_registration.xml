@@ -393,7 +393,7 @@
                 android:layout_centerVertical="true"
                 android:layout_marginLeft="16dp"
                 android:layout_toEndOf="@id/i11"
-                android:hint="Dropped Pin Link">
+                android:hint="Location PlusCode/Coordinates">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/map"
@@ -415,7 +415,6 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_margin="16dp"
-            android:onClick="save"
             android:text="SAVE"
             app:strokeColor="@color/colorPrimary" />
 
