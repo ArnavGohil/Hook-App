@@ -35,7 +35,7 @@ public class ReceivingActivity extends AppCompatActivity {
         // ATTENTION: This was auto-generated to handle app links.
         Intent appLinkIntent = getIntent();
         String data = appLinkIntent.getDataString();
-        data = data.substring(data.lastIndexOf("/") + 1);
+        data = data.substring(data.lastIndexOf("/") + 1).replaceAll("%20" , " ");
 
         phone = findViewById(R.id.flat_card);
         email = findViewById(R.id.flat_card1);
@@ -145,7 +145,7 @@ public class ReceivingActivity extends AppCompatActivity {
             case 5:
                 return view -> {
                     Intent intent = new Intent(Intent.ACTION_VIEW);
-                    intent.setData(Uri.parse("www.instagram.com/" + input));
+                    intent.setData(Uri.parse("https://www.instagram.com/" + input));
                     startActivity(intent);
                 };
             case 6:
@@ -157,7 +157,7 @@ public class ReceivingActivity extends AppCompatActivity {
             case 7:
                 return view -> {
                     Intent intent = new Intent(Intent.ACTION_VIEW);
-                    intent.setData(Uri.parse("www.twitter.com/" + input));
+                    intent.setData(Uri.parse("https://www.twitter.com/" + input));
                     startActivity(intent);
                 };
             case 8:
