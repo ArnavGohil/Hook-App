@@ -37,7 +37,7 @@ public class SelectionActivity extends AppCompatActivity {
 
             String str = "[";
             str = str.concat("\"" + preferences.getString(getString(R.string.user_name), "") + "\",");
-            str = str.concat("\"" + preferences.getString(getString(R.string.user_phone), "") + "\",");
+            str = str.concat("\"" + preferences.getString(getString(R.string.user_photo), "") + "\",");
 
             if (phone.getStrokeColor() == getColorStateList(R.color.selection))
                 str = str.concat("1|\"" + preferences.getString(getString(R.string.user_phone), "") + "\",");

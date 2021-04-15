@@ -5,16 +5,18 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.util.Base64;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 
-import java.util.HashMap;
+import java.util.HashSet;
 
 import soup.neumorphism.NeumorphCardView;
 import soup.neumorphism.NeumorphFloatingActionButton;
@@ -23,7 +25,6 @@ public class ReceivingActivity extends AppCompatActivity {
 
     ImageView photo;
     NeumorphCardView phone, email, facebook, linkedin, instagram, telegram, twitter, whatsapp, snapchat, address;
-    HashMap<Integer, String> map;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,8 +52,8 @@ public class ReceivingActivity extends AppCompatActivity {
         NeumorphFloatingActionButton fab = findViewById(R.id.fab);
         fab.setVisibility(View.INVISIBLE);
         photo = findViewById(R.id.recPhoto);
+        HashSet<Integer> set = new HashSet<>();
 
-        map = new HashMap<>();
         try {
             JSONArray jsonArray = new JSONArray(data);
 
@@ -62,20 +63,23 @@ public class ReceivingActivity extends AppCompatActivity {
             for (int i = 2; i < jsonArray.length(); i++) {
                 String x = jsonArray.getString(i);
                 int loc = x.indexOf('|');
-                map.put(Integer.parseInt(x.substring(0, loc)), x.substring(loc + 1));
+                int j = Integer.parseInt(x.substring(0, loc));
+                NeumorphCardView card = returnView(j);
+                card.setStrokeColor(getColorStateList(R.color.colorAccent));
+                card.setOnClickListener(returnListener(j, x.substring(loc + 1)));
+                set.add(j);
             }
 
         } catch (JSONException e) {
             e.printStackTrace();
         }
 
-
-        for (int i = 0; i <= 10; i++) {
-            if (map.containsKey(i)) {
-                NeumorphCardView card = returnView(i);
-                card.setStrokeColor(getColorStateList(R.color.colorAccent));
+        for (int i = 1; i <= 10; i++) {
+            if (!set.contains(i)) {
+                NeumorphCardView c = returnView(i);
+                c.setOnClickListener(view -> {
+                });
             }
-
         }
 
     }
@@ -107,6 +111,53 @@ public class ReceivingActivity extends AppCompatActivity {
         return null;
     }
 
+    private View.OnClickListener returnListener(int i, String input) {
+        switch (i) {
+            case 1:
+                return view -> {
+                    Toast.makeText(this, "Clicked Without Crash", Toast.LENGTH_SHORT).show();
+                    Log.e("TAG", "Hua kuch");
+                };
+            case 2:
+                return view -> {
+                    // TODO Something here
+                };
+            case 3:
+                return view -> {
+                    // TODO Something here
+                };
+            case 4:
+                return view -> {
+                    // TODO Something here
+                };
+            case 5:
+                return view -> {
+                    // TODO Something here
+                };
+            case 6:
+                return view -> {
+                    // TODO Something here
+                };
+            case 7:
+                return view -> {
+                    // TODO Something here
+                };
+            case 8:
+                return view -> {
+                    // TODO Something here
+                };
+            case 9:
+                return view -> {
+                    // TODO Something here
+                };
+            case 10:
+                return view -> {
+                    // TODO Something here
+                };
+        }
+        return null;
+    }
+
     private void setPhoto(String enc) {
         if (enc.length() == 0)
             return;
@@ -116,8 +167,4 @@ public class ReceivingActivity extends AppCompatActivity {
         photo.setImageBitmap(bmp);
     }
 
-    public void select(View view) {
-        NeumorphCardView card = (NeumorphCardView) view;
-        // TODO Listener
-    }
 }
