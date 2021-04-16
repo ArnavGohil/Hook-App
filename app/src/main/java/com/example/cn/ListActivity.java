@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.media.MediaPlayer;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -24,8 +25,8 @@ public class ListActivity extends AppCompatActivity {
         setContentView(R.layout.activity_list);
 
         SharedPreferences preferences = getSharedPreferences(getString(R.string.file_name), MODE_PRIVATE);
-        Set<String> set = preferences.getStringSet(getString(R.string.set_received), new HashSet<>());
-
+        HashSet<String> set = (HashSet<String>) preferences.getStringSet(getString(R.string.set_received), new HashSet<>());
+        Log.e("TAG", set.toString() );
         ArrayList<String> nameArray = new ArrayList<>();
         ArrayList<String> dataArray = new ArrayList<>();
 

@@ -18,9 +18,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import org.json.JSONArray;
 import org.json.JSONException;
 
-import java.util.ArrayList;
 import java.util.HashSet;
-import java.util.Set;
 
 import soup.neumorphism.NeumorphCardView;
 import soup.neumorphism.NeumorphFloatingActionButton;
@@ -29,7 +27,7 @@ public class ReceivingActivity extends AppCompatActivity {
 
     ImageView photo;
     NeumorphCardView phone, email, facebook, linkedin, instagram, telegram, twitter, whatsapp, snapchat, address;
-    String naam, temp ;
+    String naam, temp;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,15 +37,14 @@ public class ReceivingActivity extends AppCompatActivity {
         // ATTENTION: This was auto-generated to handle app links.
         Intent appLinkIntent = getIntent();
         String data = appLinkIntent.getDataString();
-        boolean flag = true ;
-        if (data == null)
-        {
+        boolean flag = true;
+        if (data == null) {
             flag = false;
             Bundle bundle = getIntent().getExtras();
             data = bundle.getString(getString(R.string.selected));
         }
         data = data.replaceAll("%20", " ");
-        temp = data ;
+        temp = data;
         data = data.substring(data.lastIndexOf("/") + 1);
 
         phone = findViewById(R.id.flat_card);
@@ -63,7 +60,7 @@ public class ReceivingActivity extends AppCompatActivity {
         TextView name = findViewById(R.id.recName),
                 desc = findViewById(R.id.recDes);
         desc.setText("Shared these handles with you - ");
-        NeumorphFloatingActionButton fab = findViewById(R.id.fab) , fabSha = findViewById(R.id.fabSha);
+        NeumorphFloatingActionButton fab = findViewById(R.id.fab), fabSha = findViewById(R.id.fabSha);
         fab.setVisibility(View.INVISIBLE);
         fabSha.setVisibility(View.INVISIBLE);
         photo = findViewById(R.id.recPhoto);
@@ -99,14 +96,13 @@ public class ReceivingActivity extends AppCompatActivity {
         name.setText(naam);
 
         if (flag) {
-            //TODO Check Bug
             SharedPreferences preferences = getSharedPreferences(getString(R.string.file_name), MODE_PRIVATE);
-            Set<String> setRec = preferences.getStringSet(getString(R.string.set_received), new HashSet<>());
-            Log.e("TAG", new ArrayList<>(set).toString());
-            setRec.add(naam + "|" + temp);
-            Log.e("TAG", new ArrayList<>(set).toString());
+            HashSet<String> set1 = new HashSet<>(preferences.getStringSet(getString(R.string.set_received), new HashSet<>()));
+            Log.e("TAG", set1.toString());
+            set1.add(naam + "|" + temp);
+            Log.e("TAG", set1.toString());
             SharedPreferences.Editor edit = preferences.edit();
-            edit.putStringSet(getString(R.string.set_received), setRec);
+            edit.putStringSet(getString(R.string.set_received), new HashSet<>(set1));
             edit.apply();
         }
 
