@@ -30,7 +30,13 @@ public class SelectionActivity extends AppCompatActivity {
                 snapchat = findViewById(R.id.flat_card8),
                 address = findViewById(R.id.flat_card9);
 
-        NeumorphFloatingActionButton fab = findViewById(R.id.fab);
+        NeumorphFloatingActionButton fab = findViewById(R.id.fab) , fabSha = findViewById(R.id.fabSha);
+        ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(SelectionActivity.this);
+
+        fabSha.setOnClickListener(view -> {
+            startActivity(new Intent(SelectionActivity.this, ListActivity.class), options.toBundle());
+        });
+
         fab.setOnClickListener(view -> {
 
             SharedPreferences preferences = getSharedPreferences(getString(R.string.file_name), MODE_PRIVATE);
@@ -70,7 +76,6 @@ public class SelectionActivity extends AppCompatActivity {
                 str = str.concat("\"10|" + preferences.getString(getString(R.string.user_address), "") + "\",");
 
             str = str.substring(0, str.length() - 1).concat("]").replaceAll(" ","%20");
-            ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(SelectionActivity.this);
             startActivity(new Intent(SelectionActivity.this, SharingActivity.class).putExtra(getString(R.string.selected), str), options.toBundle());
         });
     }

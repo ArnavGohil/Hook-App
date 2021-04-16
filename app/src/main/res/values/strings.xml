@@ -15,4 +15,7 @@
     <string name="user_snapchat">snapchat</string>
     <string name="user_address">address</string>
     <string name="selected">selected</string>
+
+    <string name="set_received">receivedSet</string>
+
 </resources>

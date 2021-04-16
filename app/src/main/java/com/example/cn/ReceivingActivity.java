@@ -1,12 +1,14 @@
 package com.example.cn;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.ContactsContract;
 import android.util.Base64;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -16,7 +18,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import org.json.JSONArray;
 import org.json.JSONException;
 
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.Set;
 
 import soup.neumorphism.NeumorphCardView;
 import soup.neumorphism.NeumorphFloatingActionButton;
@@ -25,7 +29,7 @@ public class ReceivingActivity extends AppCompatActivity {
 
     ImageView photo;
     NeumorphCardView phone, email, facebook, linkedin, instagram, telegram, twitter, whatsapp, snapchat, address;
-    String naam;
+    String naam, temp ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,7 +39,16 @@ public class ReceivingActivity extends AppCompatActivity {
         // ATTENTION: This was auto-generated to handle app links.
         Intent appLinkIntent = getIntent();
         String data = appLinkIntent.getDataString();
-        data = data.substring(data.lastIndexOf("/") + 1).replaceAll("%20" , " ");
+        boolean flag = true ;
+        if (data == null)
+        {
+            flag = false;
+            Bundle bundle = getIntent().getExtras();
+            data = bundle.getString(getString(R.string.selected));
+        }
+        data = data.replaceAll("%20", " ");
+        temp = data ;
+        data = data.substring(data.lastIndexOf("/") + 1);
 
         phone = findViewById(R.id.flat_card);
         email = findViewById(R.id.flat_card1);
@@ -50,8 +63,9 @@ public class ReceivingActivity extends AppCompatActivity {
         TextView name = findViewById(R.id.recName),
                 desc = findViewById(R.id.recDes);
         desc.setText("Shared these handles with you - ");
-        NeumorphFloatingActionButton fab = findViewById(R.id.fab);
+        NeumorphFloatingActionButton fab = findViewById(R.id.fab) , fabSha = findViewById(R.id.fabSha);
         fab.setVisibility(View.INVISIBLE);
+        fabSha.setVisibility(View.INVISIBLE);
         photo = findViewById(R.id.recPhoto);
         HashSet<Integer> set = new HashSet<>();
 
@@ -61,7 +75,7 @@ public class ReceivingActivity extends AppCompatActivity {
             naam = jsonArray.getString(0);
             setPhoto(jsonArray.getString(1));
 
-            for (int i = 2 ; i < jsonArray.length(); i++) {
+            for (int i = 2; i < jsonArray.length(); i++) {
                 String x = jsonArray.getString(i);
                 int loc = x.indexOf('|');
                 int j = Integer.parseInt(x.substring(0, loc));
@@ -83,6 +97,18 @@ public class ReceivingActivity extends AppCompatActivity {
         }
 
         name.setText(naam);
+
+        if (flag) {
+            //TODO Check Bug
+            SharedPreferences preferences = getSharedPreferences(getString(R.string.file_name), MODE_PRIVATE);
+            Set<String> setRec = preferences.getStringSet(getString(R.string.set_received), new HashSet<>());
+            Log.e("TAG", new ArrayList<>(set).toString());
+            setRec.add(naam + "|" + temp);
+            Log.e("TAG", new ArrayList<>(set).toString());
+            SharedPreferences.Editor edit = preferences.edit();
+            edit.putStringSet(getString(R.string.set_received), setRec);
+            edit.apply();
+        }
 
     }
 

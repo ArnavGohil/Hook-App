@@ -4,7 +4,6 @@ import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.os.Bundle;
-import android.os.Handler;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -39,14 +38,13 @@ public class SharingActivity extends AppCompatActivity {
             tv.setVisibility(View.INVISIBLE);
             anim.setVisibility(View.INVISIBLE);
             button.setClickable(false);
-            //TODO Generate QR and Print.
             try {
                 BitMatrix matrix = new MultiFormatWriter().encode(data, BarcodeFormat.QR_CODE, 512, 512);
 
                 Bitmap bmp = Bitmap.createBitmap(512, 512, Bitmap.Config.ARGB_4444);
                 for (int x = 0; x < 512; x++) {
                     for (int y = 0; y < 512; y++) {
-                        bmp.setPixel(x, y, matrix.get(x, y) ? getColor(R.color.colorAccent) : getColor(R.color.trans));
+                        bmp.setPixel(x, y, matrix.get(x, y) ? Color.WHITE : getColor(R.color.trans));
                     }
                 }
                 QRImage.setImageBitmap(bmp);
@@ -70,12 +68,17 @@ public class SharingActivity extends AppCompatActivity {
             return;
         }
 
+/*
         new Handler().postDelayed(() -> {
             anim.setAnimation(R.raw.done);
             anim.playAnimation();
             anim.loop(false);
             tv.setText("Done !");
         }, 2500);
+*/
+
+        // TODO Asli kaam ab shuru
+
 
     }
 }

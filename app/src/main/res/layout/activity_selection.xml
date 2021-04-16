@@ -64,6 +64,20 @@
         app:neumorph_backgroundColor="#404040"
         app:neumorph_shadowElevation="5dp" />
 
+    <soup.neumorphism.NeumorphFloatingActionButton
+        android:id="@+id/fabSha"
+        style="@style/Widget.Neumorph.FloatingActionButton"
+        android:layout_width="72dp"
+        android:layout_height="72dp"
+        android:layout_gravity="end"
+        android:layout_marginTop="114dp"
+        android:layout_marginStart="24dp"
+        android:elevation="175dp"
+        android:scaleType="centerInside"
+        android:src="@drawable/folder"
+        app:neumorph_backgroundColor="#404040"
+        app:neumorph_shadowElevation="5dp" />
+
 
     <ScrollView
         android:layout_width="match_parent"
