@@ -1,21 +1,16 @@
 package com.example.cn;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.app.ActivityOptions;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.media.MediaPlayer;
 import android.os.Bundle;
-import android.util.Log;
-import android.view.View;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import java.util.ArrayList;
 import java.util.HashSet;
-import java.util.Set;
 
 public class ListActivity extends AppCompatActivity {
 
@@ -26,14 +21,13 @@ public class ListActivity extends AppCompatActivity {
 
         SharedPreferences preferences = getSharedPreferences(getString(R.string.file_name), MODE_PRIVATE);
         HashSet<String> set = (HashSet<String>) preferences.getStringSet(getString(R.string.set_received), new HashSet<>());
-        Log.e("TAG", set.toString() );
+
         ArrayList<String> nameArray = new ArrayList<>();
         ArrayList<String> dataArray = new ArrayList<>();
 
-        for (String s : set)
-        {
+        for (String s : set) {
             int loc = s.indexOf('|');
-            nameArray.add(s.substring(0 , loc));
+            nameArray.add(s.substring(0, loc));
             dataArray.add(s.substring(loc + 1));
         }
 

@@ -8,7 +8,6 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.provider.ContactsContract;
 import android.util.Base64;
-import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -98,9 +97,7 @@ public class ReceivingActivity extends AppCompatActivity {
         if (flag) {
             SharedPreferences preferences = getSharedPreferences(getString(R.string.file_name), MODE_PRIVATE);
             HashSet<String> set1 = new HashSet<>(preferences.getStringSet(getString(R.string.set_received), new HashSet<>()));
-            Log.e("TAG", set1.toString());
             set1.add(naam + "|" + temp);
-            Log.e("TAG", set1.toString());
             SharedPreferences.Editor edit = preferences.edit();
             edit.putStringSet(getString(R.string.set_received), new HashSet<>(set1));
             edit.apply();

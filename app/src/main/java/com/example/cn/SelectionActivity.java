@@ -30,7 +30,7 @@ public class SelectionActivity extends AppCompatActivity {
                 snapchat = findViewById(R.id.flat_card8),
                 address = findViewById(R.id.flat_card9);
 
-        NeumorphFloatingActionButton fab = findViewById(R.id.fab) , fabSha = findViewById(R.id.fabSha);
+        NeumorphFloatingActionButton fab = findViewById(R.id.fab), fabSha = findViewById(R.id.fabSha);
         ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(SelectionActivity.this);
 
         fabSha.setOnClickListener(view -> {
@@ -75,7 +75,7 @@ public class SelectionActivity extends AppCompatActivity {
             if (address.getStrokeColor() == getColorStateList(R.color.selection))
                 str = str.concat("\"10|" + preferences.getString(getString(R.string.user_address), "") + "\",");
 
-            str = str.substring(0, str.length() - 1).concat("]").replaceAll(" ","%20");
+            str = str.substring(0, str.length() - 1).concat("]").replaceAll(" ", "%20");
             startActivity(new Intent(SelectionActivity.this, SharingActivity.class).putExtra(getString(R.string.selected), str), options.toBundle());
         });
     }
