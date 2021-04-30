@@ -9,7 +9,6 @@ import android.graphics.Color;
 import android.nfc.NfcAdapter;
 import android.nfc.Tag;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -22,9 +21,6 @@ import com.google.zxing.BarcodeFormat;
 import com.google.zxing.MultiFormatWriter;
 import com.google.zxing.WriterException;
 import com.google.zxing.common.BitMatrix;
-
-import java.util.Timer;
-import java.util.TimerTask;
 
 import soup.neumorphism.NeumorphButton;
 
@@ -81,31 +77,8 @@ public class SharingActivity extends AppCompatActivity {
         } else
             nfcAdapter = NfcAdapter.getDefaultAdapter(this);
 
-/*
-        new Handler().postDelayed(() -> {
-            anim.setAnimation(R.raw.done);
-            anim.playAnimation();
-            anim.loop(false);
-            tv.setText("Done !");
-        }, 2500);
-*/
-
-        // TODO Turn off NFC receiving
 
         Context context = this;
-        Timer t = new Timer();
-
-        TimerTask task = new TimerTask() {
-            @Override
-            public void run() {
-                Intent intent = new Intent(context, CardService.class);
-                intent.putExtra("ndefMessage", data);
-                startService(intent);
-            }
-
-        };
-
-//        t.scheduleAtFixedRate(task, 0, 10000);
 
         Intent intent = new Intent(context, CardService.class);
         intent.putExtra("ndefMessage", data);
@@ -141,14 +114,11 @@ public class SharingActivity extends AppCompatActivity {
     private void resolveIntent(Intent intent) {
         if (NfcAdapter.ACTION_NDEF_DISCOVERED.equals(intent.getAction()) || NfcAdapter.ACTION_TAG_DISCOVERED.equals(intent.getAction()) || NfcAdapter.ACTION_TECH_DISCOVERED.equals(intent.getAction())) {
             Tag tag = intent.getParcelableExtra(NfcAdapter.EXTRA_TAG);
-            Log.e("HostApduService", print(tag.getTechList()));
+            Snackbar.make(findViewById(R.id.rv), "Receiver Device interfering communications. It is recommended the receiver also opens the app. ", Snackbar.LENGTH_SHORT)
+                    .setActionTextColor(Color.parseColor("#F9AA33"))
+                    .setTextColor(Color.parseColor("#FFFFFF"))
+                    .setBackgroundTint(Color.parseColor("#344955"))
+                    .show();
         }
-    }
-
-    private String print(String[] techList) {
-        StringBuilder str = new StringBuilder();
-        for (String s : techList)
-            str.append(s).append("\n");
-        return str.toString();
     }
 }
