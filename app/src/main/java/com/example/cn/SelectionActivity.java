@@ -43,9 +43,7 @@ public class SelectionActivity extends AppCompatActivity {
         NeumorphFloatingActionButton fab = findViewById(R.id.fab), fabSha = findViewById(R.id.fabSha);
         ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(SelectionActivity.this);
 
-        fabSha.setOnClickListener(view -> {
-            startActivity(new Intent(SelectionActivity.this, ListActivity.class), options.toBundle());
-        });
+        fabSha.setOnClickListener(view -> startActivity(new Intent(SelectionActivity.this, ListActivity.class), options.toBundle()));
 
         fab.setOnClickListener(view -> {
 
@@ -53,7 +51,7 @@ public class SelectionActivity extends AppCompatActivity {
 
             String str = "cn://[";
             str = str.concat("\"" + preferences.getString(getString(R.string.user_name), "") + "\",");
-            str += ""; /* TODO str.concat("\"" + preferences.getString(getString(R.string.user_photo), "") + "\",");*/
+            str = str.concat("\"" + preferences.getString(getString(R.string.user_photo), "") + "\",");
 
             if (phone.getStrokeColor() == getColorStateList(R.color.selection))
                 str = str.concat("\"1|" + preferences.getString(getString(R.string.user_phone), "") + "\",");
