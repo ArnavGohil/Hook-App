@@ -17,5 +17,6 @@
     <string name="selected">selected</string>
 
     <string name="set_received">receivedSet</string>
-
+    <string name="aiddescription">Hook App</string>
+    <string name="servicedesc">Hook App</string>
 </resources>
