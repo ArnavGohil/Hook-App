@@ -1,5 +1,6 @@
 package com.example.cn;
 
+import android.app.ActivityOptions;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
@@ -125,5 +126,10 @@ public class SharingActivity extends AppCompatActivity {
                     .setBackgroundTint(Color.parseColor("#344955"))
                     .show();
         }
+    }
+
+    @Override
+    public void onBackPressed() {
+        startActivity(new Intent(this, SelectionActivity.class), ActivityOptions.makeSceneTransitionAnimation(this).toBundle());
     }
 }

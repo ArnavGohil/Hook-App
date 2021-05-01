@@ -14,9 +14,11 @@
         android:theme="@style/Theme1">
         <activity
             android:name=".ListActivity"
+            android:noHistory="true"
             android:screenOrientation="portrait" />
         <activity
             android:name=".ReceivingActivity"
+            android:noHistory="true"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
@@ -36,6 +38,7 @@
         </activity>
         <activity
             android:name=".SplashScreen"
+            android:noHistory="true"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -45,16 +48,20 @@
         </activity>
         <activity
             android:name=".SharingActivity"
+            android:noHistory="true"
             android:screenOrientation="portrait" />
         <activity
             android:name=".SelectionActivity"
+            android:noHistory="true"
             android:screenOrientation="portrait" />
         <activity
             android:name=".RegistrationActivity"
+            android:noHistory="true"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme" />
         <activity
             android:name=".MainActivity"
+            android:noHistory="true"
             android:screenOrientation="portrait" />
 
         <service

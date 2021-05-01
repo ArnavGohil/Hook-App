@@ -41,4 +41,9 @@ public class ListActivity extends AppCompatActivity {
             startActivity(new Intent(ListActivity.this, ReceivingActivity.class).putExtra(getString(R.string.selected), data), options.toBundle());
         });
     }
+
+    @Override
+    public void onBackPressed() {
+        startActivity(new Intent(this, SelectionActivity.class), ActivityOptions.makeSceneTransitionAnimation(this).toBundle());
+    }
 }

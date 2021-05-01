@@ -1,5 +1,6 @@
 package com.example.cn;
 
+import android.app.ActivityOptions;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
@@ -27,6 +28,7 @@ public class ReceivingActivity extends AppCompatActivity {
     ImageView photo;
     NeumorphCardView phone, email, facebook, linkedin, instagram, telegram, twitter, whatsapp, snapchat, address;
     String naam, temp;
+    boolean flag;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,7 +38,7 @@ public class ReceivingActivity extends AppCompatActivity {
         // ATTENTION: This was auto-generated to handle app links.
         Intent appLinkIntent = getIntent();
         String data = appLinkIntent.getDataString();
-        boolean flag = true;
+        flag = true;
         if (data == null) {
             flag = false;
             Bundle bundle = getIntent().getExtras();
@@ -210,4 +212,11 @@ public class ReceivingActivity extends AppCompatActivity {
         photo.setImageBitmap(bmp);
     }
 
+    @Override
+    public void onBackPressed() {
+        if (flag)
+            super.onBackPressed();
+        else
+            startActivity(new Intent(this, ListActivity.class), ActivityOptions.makeSceneTransitionAnimation(this).toBundle());
+    }
 }
