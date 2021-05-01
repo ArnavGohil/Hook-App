@@ -7,11 +7,12 @@ import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.nfc.NfcAdapter;
-import android.nfc.Tag;
 import android.os.Bundle;
+import android.provider.Settings;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -74,8 +75,13 @@ public class SharingActivity extends AppCompatActivity {
                     .setBackgroundTint(Color.parseColor("#344955"))
                     .show();
             return;
-        } else
+        } else {
             nfcAdapter = NfcAdapter.getDefaultAdapter(this);
+            if (!nfcAdapter.isEnabled()) {
+                Toast.makeText(this, "Please Turn on NFC", Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(Settings.ACTION_NFC_SETTINGS));
+            }
+        }
 
 
         Context context = this;
@@ -113,7 +119,6 @@ public class SharingActivity extends AppCompatActivity {
 
     private void resolveIntent(Intent intent) {
         if (NfcAdapter.ACTION_NDEF_DISCOVERED.equals(intent.getAction()) || NfcAdapter.ACTION_TAG_DISCOVERED.equals(intent.getAction()) || NfcAdapter.ACTION_TECH_DISCOVERED.equals(intent.getAction())) {
-            Tag tag = intent.getParcelableExtra(NfcAdapter.EXTRA_TAG);
             Snackbar.make(findViewById(R.id.rv), "Receiver Device interfering communications. It is recommended the receiver also opens the app. ", Snackbar.LENGTH_SHORT)
                     .setActionTextColor(Color.parseColor("#F9AA33"))
                     .setTextColor(Color.parseColor("#FFFFFF"))

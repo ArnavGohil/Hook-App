@@ -120,7 +120,7 @@ class CardService : HostApduService() {
             )
         }
 
-        Log.i(TAG, "onStartCommand() | NDEF" + NDEF_URI.records[0].payload);
+        Log.i(TAG, "onStartCommand() | NDEF" + NDEF_URI.records[0].payload)
 
         return Service.START_STICKY
     }
@@ -250,8 +250,8 @@ class CardService : HostApduService() {
         val result = ByteArray(length / 2)
 
         for (i in 0 until length step 2) {
-            val firstIndex = HEX_CHARS.indexOf(this[i]);
-            val secondIndex = HEX_CHARS.indexOf(this[i + 1]);
+            val firstIndex = HEX_CHARS.indexOf(this[i])
+            val secondIndex = HEX_CHARS.indexOf(this[i + 1])
 
             val octet = firstIndex.shl(4).or(secondIndex)
             result.set(i.shr(1), octet.toByte())
